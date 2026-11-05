@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[a4paper,margin=1in]{geometry}
-\usepackage{amsmath,amssymb,mathtools,enumitem}
+\usepackage{amsmath,amssymb,mathtools,enumitem,amsthm}
 \newcommand{\Hom}{\operatorname{Hom}}
 \newcommand{\Ind}{\operatorname{Ind}}
 \newcommand{\Res}{\operatorname{Res}}
@@ -11,6 +11,51 @@
 \begin{document}
 \maketitle
 \section{Runge's Theorem}
+The fact that functions analytic on a disk are limits of polynomials is due to the fact that the disks are simply connected.
+From the Laurent series, we can see that each analytic function on $G$ is the uniform limit of rational functions whose poles
+lie outside $G$. Each holomorphic function $f$ is the limit of a sequence of rational functions which also belong to the functions
+holomorphic on $G$. For example, for any Laurent series on an annulus,
+\[
+\begin{aligned}
+f(z) = \underbrace{\sum_{n=0}^{\infty}c_n(z-a)^n}_{\text{Taylor Part}} + \underbrace{\sum_{n=0}^{\infty}\frac{c_{-n}}{(z-a)^n}}_{\text{Principle Part}}
+\end{aligned}
+\]
+By taking finite partial sums,
+\[
+\begin{aligned}
+R_N(z) = \sum_{n=0}^{N}c_n(z-a)^n + \sum_{n=0}^{N}\frac{c_{-n}}{(z-a)^n}
+\end{aligned}
+\]
+We see that $R_N$ is a rational function, and $f$ is the limit of $R_N$.
+This may be generalized to arbitrary regions, which is part of the content of Runge's Theorem. But first we need
+the enhanced separation lemma.
+\subsection{Enhanced Separation Lemma}
+Let $G \subset \mathbb{C}$ be an open set, and let $K \subset G$ be a compact subset. Then there are straight line segments
+$\gamma_1, \dots, \gamma_n$ in $G - K$ such that for every function $f$ that is holomorphic on $G$,
+\[
+\begin{aligned}
+  f(z) = \sum_{k = 1}^{n} \frac{1}{2\pi i} \int_{\gamma_k} \frac{f(w)}{w-z}dw
+\end{aligned}
+\]
+For all $z \in K$. The line segments form a finite number of closed polygons. Furthermore, also exists $\delta > 0$,
+such that $\forall w \in \gamma_k,\forall k \in K, ||w - k|| \ge \delta$.
 \subsection{Weak Runge}
-
+Let $G \subset \mathbb{C}$ be an open set, and let $K \subset G$ be a compact subset. \\
+Then for any holomorphic function $f: G \to \mathbb{C}$ on $G$ and any $\epsilon > 0$, there exists a rational function $R(z)$
+whose poles lie in $\mathbb{C}_{\infty} - K$
+such that $|f(z) - R(z)| < \epsilon$, for all $z \in K$.
+\begin{proof}
+  Since we have $G$ as an open set, with $K \subset G$ as a compact subset, and $f$ holomorphic on $G$,
+  we apply the enhanced separation lemma to obtain,
+  \[
+  \begin{aligned}
+  f(z) &= \sum_{k = 1}^{n} \frac{1}{2\pi i} \int_{\gamma_k} \frac{f(w)}{w-z} \,dw && \text{Enhanced separation lemma}
+  \end{aligned}
+  \]
+  For all $z \in K$, where $\gamma_k \in G - K$ is a straight line segment and exists $\delta > 0$,
+  such that $\forall w \in \gamma_k,\forall k \in K, ||w - k|| \ge \delta$. Now in the above formulation of $f(z)$, let
+  \[
+  f_j = \frac{1}{2\pi i} \int_{\gamma_k} \frac{f(w)}{w-z}
+  \]
+\end{proof}
 \end{document}
