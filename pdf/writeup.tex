@@ -18,7 +18,8 @@ lie outside $G$. Each holomorphic function $f$ is the limit of a sequence of rat
 holomorphic on $G$. For example, for any Laurent series on an annulus,
 \[
 \begin{aligned}
-f(z) = \underbrace{\sum_{n=0}^{\infty}c_n(z-a)^n}_{\text{Taylor Part}} + \underbrace{\sum_{n=0}^{\infty}\frac{c_{-n}}{(z-a)^n}}_{\text{Principle Part}}
+  f(z) = \underbrace{\sum_{n=0}^{\infty}c_n(z-a)^n}_{\text{Taylor Part}} +
+  \underbrace{\sum_{n=0}^{\infty}\frac{c_{-n}}{(z-a)^n}}_{\text{Principle Part}}
 \end{aligned}
 \]
 by taking finite partial sums,
@@ -27,9 +28,9 @@ by taking finite partial sums,
 R_N(z) = \sum_{n=0}^{N}c_n(z-a)^n + \sum_{n=0}^{N}\frac{c_{-n}}{(z-a)^n}
 \end{aligned}
 \]
-We see that $R_N$ is a rational function, and $f$ is the limit of $R_N$.
-This may be generalized to arbitrary regions, which is part of the content of Runge's Theorem. But first we need
-the enhanced separation lemma.
+We see that $R_N$ is a rational function, and $f$ is the limit of $R_N$. This may be generalized to
+arbitrary regions, which is part of the content of Runge's Theorem. But first we need the enhanced
+separation lemma.
 
 \subsection{Enhanced Separation Lemma}
 Let $G \subset \mathbb{C}$ be an open set, and let $K \subset G$ be a compact subset. Then there are straight line segments
@@ -192,6 +193,7 @@ such that $|f(z) - R(z)| < \varepsilon$, for all $z \in K$.
   \item $\forall k \in K, \forall t \in [0, 1], \quad \delta \le ||(1-t)\gamma_i(0) + t\gamma_i(1) - k||$
     \just{Enhanced separation lemma}
   \item $\forall k \in K, \frac{\frac{||b - a||}{2} + \delta}{2} < \delta \le ||k - \frac{a + b}{2}||$
+    \just{3. gives left inequality, 4. and $t = \frac{1}{2}$ gives right inequality}
   \end{enumerate}
   Then by the rational approximation of a segment integral, each $f_i$ can be approximated on $K$
   by rational functions whose pole has some distance away from all $k \in K$. More precisely, 
@@ -202,7 +204,7 @@ such that $|f(z) - R(z)| < \varepsilon$, for all $z \in K$.
   Let $R(z) = \sum_{i = 1}^{n} R_i(z)$, then
   \[
   \begin{aligned}
-    |f(z) - R(z)| &= | \sum_{i = 1}^{n}f_i(z) - \sum_{i = 1}^{n} R_i(z)| \\
+    |f(z) - R(z)| &= |\sum_{i = 1}^{n}f_i(z) - \sum_{i = 1}^{n} R_i(z)| \\
     &< \sum_{i=1}^{n}\frac{\varepsilon}{n} \\
     &= \varepsilon
   \end{aligned} 
